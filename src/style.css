@@ -128,11 +128,7 @@ table {
   border-spacing: 0;
 }
 
-/* @import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap");
-* {
-  text-decoration: none;
-  font-family: "Wix Madefor Display", sans-serif;
- 
-  font-weight: 700;
- 
-} */
+*{
+  box-sizing: border-box;
+  max-width: 100%;
+}

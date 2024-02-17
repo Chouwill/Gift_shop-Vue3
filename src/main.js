@@ -17,6 +17,8 @@ import {
      faUser,
      faLessThan, 
      faGreaterThan,
+     faMagnifyingGlass,
+     faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import {
      faInstagram,
@@ -25,7 +27,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
-library.add(faUserSecret, faUser, faLessThan, faGreaterThan, faInstagram, faFacebook, faTiktok);
+library.add(faUserSecret, faUser, faLessThan, faGreaterThan, faInstagram, faFacebook, faTiktok, faMagnifyingGlass, faBars);
 
 const app = createApp(App);
 
