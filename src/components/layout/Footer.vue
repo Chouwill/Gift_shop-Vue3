@@ -22,7 +22,7 @@
           <a href="#">Gift Card</a>
         </li>
       </ul>
-      <ul class="footer_column">
+      <!-- <ul class="footer_column">
         <h3><a href="#">Helpful Links</a></h3>
         <li>
           <a href="#">FAQ</a>
@@ -42,7 +42,7 @@
         <li>
           <a href="#">Gift Card</a>
         </li>
-      </ul>
+      </ul> -->
       <ul class="footer_column">
         <h3><a href="#">Contact</a></h3>
         <li>
