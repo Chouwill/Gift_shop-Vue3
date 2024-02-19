@@ -131,4 +131,6 @@ table {
 *{
   box-sizing: border-box;
   max-width: 100%;
+  text-decoration: none;
+  list-style: none;
 }
