@@ -6,6 +6,7 @@ import Sale from "../views/Sale.vue";
 import GiftCard from "../views/GiftCard.vue";
 import Accessories from "../views/Accessories.vue";
 import Stationery from "../views/Stationery.vue";
+import Shoppingcart from "../views/Shoppingcart.vue";
 
 const routes = [
   {
@@ -18,25 +19,29 @@ const routes = [
   },
   {
     path: "/accessories",
-    component: () => Accessories
+    component: () => Accessories,
   },
   {
     path: "/stationery",
-    component: () => Stationery
+    component: () => Stationery,
   },
   {
     path: "/sale",
-    component: () => Sale
+    component: () => Sale,
   },
   {
     path: "/gift-card",
-    component: () => GiftCard
+    component: () => GiftCard,
   },
-]
+  {
+    path: "/shoppingcart",
+    component: () => Shoppingcart,
+  },
+];
 
 const router = createRouter({
-    history: createWebHashHistory(),
-    routes
-})
+  history: createWebHashHistory(),
+  routes,
+});
 
 export default router;
