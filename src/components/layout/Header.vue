@@ -28,7 +28,7 @@
     </nav>
     <div class="member">
       <a href="#"><font-awesome-icon icon="fa-solid fa-user" /></a>
-      <a href="#">Cart(0)</a>
+      <router-link to="/shoppingcart">Cart(0)</router-link>
       <!-- <button
         :class="['phone_menu', { active: menuIsShow }]"
         @click="toggleMenu"
@@ -181,7 +181,7 @@ header {
           display: none;
         }
 
-        &:nth-child(1){
+        &:nth-child(1) {
           top: 10px;
           left: 0;
         }
