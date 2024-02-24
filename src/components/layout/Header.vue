@@ -39,15 +39,17 @@
           :icon="`fa-solid ${menuIsShow ? 'fa-xmark' : 'fa-bars'}`"
         />
       </button> -->
-      <div
-        class="menu-button"
-        :class="{ open: menuIsShow }"
-        @click="toggleMenu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-        <!-- <span></span> -->
+      <div class="menu-btn-bg">
+        <div
+          class="menu-button"
+          :class="{ open: menuIsShow }"
+          @click="toggleMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <!-- <span></span> -->
+        </div>
       </div>
     </div>
   </header>
@@ -177,61 +179,76 @@ header {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  .menu-button {
+  }
   @include pad {
     // border: none;
-    .menu-button {
-      width: 30px;
-      height: 22px;
-      transform: rotate(0deg);
-      transition: 0.5s ease-in-out;
-      cursor: pointer;
-      z-index: 105;
+    .menu-btn-bg {
+      background-color: #e5c22e;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      // position: relative;
 
-      span {
-        display: block;
-        position: absolute;
-        height: 4px;
-        width: 200px;
-        background: #333;
-        border-radius: 4px;
-        opacity: 1;
-        left: 0;
+      .menu-button {
+        width: 18px;
+        height: 10px;
         transform: rotate(0deg);
-        transition: 0.25s ease-in-out;
-        &:active {
-          display: none;
-        }
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        z-index: 105;
+        border-radius: 50%;
+        position: absolute;
+        top: 28px;
+        right: 32px;
+        gap: 5px;
 
-        &:nth-child(1) {
-          top: 10px;
-          left: 0;
-        }
-
-        &:nth-child(2) {
-          top: 0px;
-        }
-
-        &:nth-child(3) {
-          top: 20px;
-        }
-      }
-
-      &.open {
         span {
-          top: 10px;
-          transform-origin: center;
-          &:nth-child(1),
-          &:nth-child(4) {
-            width: 0%;
-            left: 50%;
+          display: block;
+          position: absolute;
+          height: 4px;
+          width: 100%;
+          background: #333;
+          border-radius: 4px;
+          opacity: 1;
+          left: 0;
+          transform: rotate(0deg);
+          transition: 0.25s ease-in-out;
+          &:active {
+            display: none;
+          }
+
+          &:nth-child(1) {
+            top: 10px;
+            left: 0;
           }
 
           &:nth-child(2) {
-            transform: rotate(45deg);
+            top: 0px;
           }
 
           &:nth-child(3) {
-            transform: rotate(-45deg);
+            top: 20px;
+          }
+        }
+
+        &.open {
+          span {
+            top: 10px;
+            transform-origin: center;
+            &:nth-child(1),
+            &:nth-child(4) {
+              width: 0%;
+              left: 50%;
+            }
+
+            &:nth-child(2) {
+              transform: rotate(45deg);
+            }
+
+            &:nth-child(3) {
+              transform: rotate(-45deg);
+            }
           }
         }
       }
