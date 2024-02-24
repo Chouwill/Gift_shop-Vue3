@@ -29,14 +29,24 @@
     <div class="member">
       <a href="#"><font-awesome-icon icon="fa-solid fa-user" /></a>
       <a href="#">Cart(0)</a>
-      <button
+      <!-- <button
         :class="['phone_menu', { active: menuIsShow }]"
         @click="toggleMenu"
       >
         <font-awesome-icon
           :icon="`fa-solid ${menuIsShow ? 'fa-xmark' : 'fa-bars'}`"
         />
-      </button>
+      </button> -->
+      <div
+        class="menu-button"
+        :class="{ open: menuIsShow }"
+        @click="toggleMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <!-- <span></span> -->
+      </div>
     </div>
   </header>
 </template>
@@ -45,13 +55,17 @@
 import { ref, computed } from "vue";
 
 const menuIsShow = ref(false);
-const iconName = computed(() =>
-  menuIsShow.value ? "fa-solid fa-xmark" : "fa-solid fa-bar"
-);
+// const iconName = computed(() =>
+//   menuIsShow.value ? "fa-solid fa-xmark" : "fa-solid fa-bar"
+// );
 
 const toggleMenu = () => {
   menuIsShow.value = !menuIsShow.value;
 };
+// const toggleMenu = () => {
+//   menuIsShow.value = !menuIsShow.value;
+//   console.log("menuIsShow:", menuIsShow.value);
+// };
 </script>
 
 <style lang="scss" scoped>
@@ -125,11 +139,11 @@ header {
     position: fixed;
     font-size: 2rem;
     gap: 5vh;
-    width: 100vw;
+    width: 70vw;
     height: 100vh;
     z-index: 100;
     top: 0;
-    left: 0;
+    right: 0px;
     background-color: orange;
     &:not(.show) {
       display: none;
@@ -143,7 +157,64 @@ header {
   justify-content: center;
   gap: 0.5rem;
   @include pad {
-    border: none;
+    // border: none;
+    .menu-button {
+      width: 30px;
+      height: 22px;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      z-index: 105;
+
+      span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 200px;
+        background: #333;
+        border-radius: 4px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+        &:active {
+          display: none;
+        }
+
+        &:nth-child(1){
+          top: 10px;
+          left: 0;
+        }
+
+        &:nth-child(2) {
+          top: 0px;
+        }
+
+        &:nth-child(3) {
+          top: 20px;
+        }
+      }
+
+      &.open {
+        span {
+          top: 10px;
+          transform-origin: center;
+          &:nth-child(1),
+          &:nth-child(4) {
+            width: 0%;
+            left: 50%;
+          }
+
+          &:nth-child(2) {
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -155,7 +226,7 @@ header {
     align-items: center;
     position: relative;
     z-index: 101;
-    &.active{
+    &.active {
       position: fixed;
       right: 20px;
     }
