@@ -16,23 +16,23 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="product in state.products" :key="product.id">
             <td class="cart_item_pic">
-              <img src="https://picsum.photos/200/150/?random=10" />
+              <img :src="product.imageUrl" />
             </td>
             <td class="cart_item_td">
-              <h5>招牌早午餐</h5>
+              <h5>{{product.title}}</h5>
               <div class="cart_controls">
                 <button class="btn">
                   <font-awesome-icon icon="fa-solid fa-minus" />
                 </button>
-                <span>1</span>
+                <span>{{product.num}}</span>
                 <button class="btn">
                   <font-awesome-icon icon="fa-solid fa-plus" />
                 </button>
               </div>
             </td>
-            <td class="cart_item_price">200</td>
+            <td class="cart_item_price">{{ product.price }}</td>
             <td class="cart_item_trash">
               <button class="btn btn-trash">
                 <font-awesome-icon icon="fa-solid fa-trash" />
@@ -60,7 +60,12 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive } from "vue";
+import { useCartStore } from "../stores/cart";
+const cart = useCartStore();
+const state = reactive(cart.state);
+</script>
 
 <style lang="scss" scoped>
 @import "../assets/scss/media";
@@ -180,10 +185,10 @@
         padding: 20px;
         vertical-align: middle;
       }
-      th{
+      th {
         text-align: left;
       }
-      td{
+      td {
         text-align: right;
       }
     }

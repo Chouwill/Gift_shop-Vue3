@@ -3,7 +3,7 @@
     <div class="search">
       <div class="search_box">
         <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-        <input type="search" class="search_input"  placeholder="Search"/>
+        <input type="search" class="search_input" placeholder="Search" />
       </div>
     </div>
     <nav class="logo_menu">
@@ -27,8 +27,10 @@
       </ul>
     </nav>
     <div class="member">
-      <a href="#"><font-awesome-icon icon="fa-solid fa-user" class="search_icon" /></a>
-      <router-link to="/shoppingcart">Cart(0)</router-link>
+      <a href="#"
+        ><font-awesome-icon icon="fa-solid fa-user" class="search_icon"
+      /></a>
+      <router-link to="/shoppingcart">Cart({{ cartNum }})</router-link>
       <!-- <button
         :class="['phone_menu', { active: menuIsShow }]"
         @click="toggleMenu"
@@ -53,6 +55,11 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { useCartStore } from "../../stores/cart";
+
+const cart = useCartStore();
+
+const cartNum = computed(() => cart.cartNum);
 
 const menuIsShow = ref(false);
 // const iconName = computed(() =>
@@ -94,10 +101,11 @@ header {
     align-items: center;
     gap: 12px;
     border-bottom: 2px solid transparent;
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       border-bottom-color: #000;
     }
-    .search_icon{
+    .search_icon {
       font-size: 1.2rem;
     }
     .search_input {
@@ -106,7 +114,7 @@ header {
       &:focus {
         outline: none;
       }
-      &::placeholder{
+      &::placeholder {
         color: #000;
         font-size: 1rem;
       }
