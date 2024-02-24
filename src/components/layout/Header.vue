@@ -3,7 +3,7 @@
     <div class="search">
       <div class="search_box">
         <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-        <input type="search" class="search_input" />
+        <input type="search" class="search_input"  placeholder="Search"/>
       </div>
     </div>
     <nav class="logo_menu">
@@ -27,7 +27,7 @@
       </ul>
     </nav>
     <div class="member">
-      <a href="#"><font-awesome-icon icon="fa-solid fa-user" /></a>
+      <a href="#"><font-awesome-icon icon="fa-solid fa-user" class="search_icon" /></a>
       <router-link to="/shoppingcart">Cart(0)</router-link>
       <!-- <button
         :class="['phone_menu', { active: menuIsShow }]"
@@ -88,14 +88,27 @@ header {
 .search {
   display: flex;
   align-items: center;
+  justify-content: center;
   .search_box {
-    &:focus {
-      border-bottom: 10px solid #000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid transparent;
+    &:focus, &:hover {
+      border-bottom-color: #000;
+    }
+    .search_icon{
+      font-size: 1.2rem;
     }
     .search_input {
       border: none;
+      padding: 8px 4px;
       &:focus {
         outline: none;
+      }
+      &::placeholder{
+        color: #000;
+        font-size: 1rem;
       }
     }
     &:focus-within {
