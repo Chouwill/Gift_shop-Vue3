@@ -11,6 +11,7 @@
       <li v-for="product in state1.products" :key="product.id">
         <img :src="product.imageUrl" :alt="product.title" width="299" />
         {{ product.title }}
+        <button @click="addCart(product)">加入購物車</button>
       </li>
     </ul>
   </div>
@@ -21,11 +22,19 @@ import { reactive } from "vue";
 import { getProducts } from "../apis/product";
 import { onMounted, ref } from "vue";
 import axios from "axios";
+import { useCartStore } from "../stores/cart";
+
+const cart = useCartStore();
+
 const notes = ref([]);
 
 const state1 = reactive({
   products: [],
 });
+
+const addCart = (product) =>{
+  cart.add(product);
+}
 
 onMounted(async () => {
   const apiURL = `${import.meta.env.VITE_APP_API}/api/${
