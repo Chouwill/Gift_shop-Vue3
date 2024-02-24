@@ -12,8 +12,6 @@
         <img :src="product.imageUrl" :alt="product.title" width="299" />
         {{ product.title }}
       </li>
-      <router-link to="/shoppingcart">cart</router-link>
-
     </ul>
   </div>
 </template>
