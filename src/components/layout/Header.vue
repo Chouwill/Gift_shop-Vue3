@@ -45,10 +45,8 @@
         <span></span>
         <span></span>
         <span></span>
-        <span></span>
+        <!-- <span></span> -->
       </div>
-      <font-awesome-icon icon="fa-solid fa-xmark" class="cancel" v-if="menuIsShow" 
-  @click="toggleMenu" />
     </div>
   </header>
 </template>
@@ -179,12 +177,11 @@ header {
         left: 0;
         transform: rotate(0deg);
         transition: 0.25s ease-in-out;
-        &:active{
-            display: none;
-          }
+        &:active {
+          display: none;
+        }
 
-        &:nth-child(1),
-        &:nth-child(4) {
+        &:nth-child(1){
           top: 10px;
           left: 0;
         }
@@ -200,6 +197,8 @@ header {
 
       &.open {
         span {
+          top: 10px;
+          transform-origin: center;
           &:nth-child(1),
           &:nth-child(4) {
             width: 0%;
