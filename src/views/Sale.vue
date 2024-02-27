@@ -68,6 +68,15 @@ onMounted(async () => {
       align-items: center;
       border: 5px solid red;
       flex-direction: column;
+      img{
+        max-width: 45%;
+        border: 5px solid goldenrod;
+        margin: 10px 0;
+      }
+      button{
+        padding: 15px 15px;
+        border-radius: 20px;
+      }
     }
   }
 }
