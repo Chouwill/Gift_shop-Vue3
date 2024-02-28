@@ -135,10 +135,13 @@ header {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   h1 {
-    border: 1px solid greenyellow;
+    // border: 1px solid greenyellow;
     text-align: center;
     padding: 30px 0;
     box-sizing: border-box;
+    font-family: syne;
+    font-weight: 700;
+    font-size: 45px;
   }
   @include pad {
     grid-template-rows: unset;
@@ -146,10 +149,12 @@ header {
 }
 
 .menu {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: normal;
   text-align: center;
   display: flex;
   // padding: 20px 0;
-  border: 5px solid gray;
+  // border: 5px solid gray;
   gap: 20px;
   padding-left: 20px;
   box-sizing: border-box;

@@ -21,20 +21,22 @@
               <img :src="product.imageUrl" />
             </td>
             <td class="cart_item_td">
-              <h5>{{product.title}}</h5>
+              <h5>{{ product.title }}</h5>
               <div class="cart_controls">
-                <button class="btn">
+                <button class="btn" @click="cart.decrement(product.id)">
                   <font-awesome-icon icon="fa-solid fa-minus" />
                 </button>
-                <span>{{product.num}}</span>
-                <button class="btn">
+                <span>{{ product.number }}</span>
+                <button class="btn" @click="cart.increment(product.id)">
                   <font-awesome-icon icon="fa-solid fa-plus" />
                 </button>
               </div>
             </td>
-            <td class="cart_item_price">{{ product.price }}</td>
+            <td class="cart_item_price">
+              {{ product.price * product.number }}
+            </td>
             <td class="cart_item_trash">
-              <button class="btn btn-trash">
+              <button class="btn btn-trash" @click="cart.remove(product.id)">
                 <font-awesome-icon icon="fa-solid fa-trash" />
               </button>
             </td>
@@ -44,7 +46,7 @@
       <table class="cart_total">
         <tr>
           <th>訂單金額</th>
-          <td>1000</td>
+          <td>{{ totalPrice }}</td>
         </tr>
         <tr>
           <th>運費</th>
@@ -52,7 +54,7 @@
         </tr>
         <tr>
           <th>總計</th>
-          <td>1060</td>
+          <td>{{ totalPrice + 60 }}</td>
         </tr>
       </table>
       <button class="self_checkout">確認結帳</button>
@@ -61,10 +63,11 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
 import { useCartStore } from "../stores/cart";
 const cart = useCartStore();
 const state = reactive(cart.state);
+const totalPrice = computed(() => cart.totalPrice);
 </script>
 
 <style lang="scss" scoped>
@@ -129,6 +132,12 @@ const state = reactive(cart.state);
         padding: 0;
         width: 80px;
         height: 80px;
+        line-height: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
       .cart_item_td {
         // width: 10vw;

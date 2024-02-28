@@ -127,11 +127,9 @@
 }
 .wrapper{
   max-width: 100%;
-  border: 20px solid red;
 }
 .introduction {
   width: 100%;
-  border: 2px solid rebeccapurple;
   display: flex;
   min-height: 650px; //可能高度不夠
 }
@@ -146,7 +144,6 @@
   flex: 1;
   background-color: #f1e4b8;
   text-align: center;
-  border: 1px solid #000;
   padding: 150px 0;
 
   h2 {
@@ -192,12 +189,10 @@
   .shop_main_builder {
     width: 100%;
     display: flex;
-    // border: 10px solid greenyellow;
     justify-content: center;
     align-items: center;
     .picture_builder {
       display: flex;
-      // border: 2px solid red;
       width: 90%;
       justify-content: space-evenly;
       align-items: center;
