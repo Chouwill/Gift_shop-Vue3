@@ -3,7 +3,7 @@
     <div class="search">
       <div class="search_box">
         <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-        <input type="search" class="search_input"  placeholder="Search"/>
+        <input type="search" class="search_input" placeholder="Search" />
       </div>
     </div>
     <nav class="logo_menu">
@@ -27,8 +27,10 @@
       </ul>
     </nav>
     <div class="member">
-      <a href="#"><font-awesome-icon icon="fa-solid fa-user" class="search_icon" /></a>
-      <router-link to="/shoppingcart">Cart(0)</router-link>
+      <a href="#"
+        ><font-awesome-icon icon="fa-solid fa-user" class="search_icon"
+      /></a>
+      <router-link to="/shoppingcart">Cart({{ cartNum }})</router-link>
       <!-- <button
         :class="['phone_menu', { active: menuIsShow }]"
         @click="toggleMenu"
@@ -37,15 +39,17 @@
           :icon="`fa-solid ${menuIsShow ? 'fa-xmark' : 'fa-bars'}`"
         />
       </button> -->
-      <div
-        class="menu-button"
-        :class="{ open: menuIsShow }"
-        @click="toggleMenu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-        <!-- <span></span> -->
+      <div class="menu-btn-bg">
+        <div
+          class="menu-button"
+          :class="{ open: menuIsShow }"
+          @click="toggleMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <!-- <span></span> -->
+        </div>
       </div>
     </div>
   </header>
@@ -53,6 +57,11 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { useCartStore } from "../../stores/cart";
+
+const cart = useCartStore();
+
+const cartNum = computed(() => cart.cartNum);
 
 const menuIsShow = ref(false);
 // const iconName = computed(() =>
@@ -94,10 +103,11 @@ header {
     align-items: center;
     gap: 12px;
     border-bottom: 2px solid transparent;
-    &:focus, &:hover {
+    &:focus,
+    &:hover {
       border-bottom-color: #000;
     }
-    .search_icon{
+    .search_icon {
       font-size: 1.2rem;
     }
     .search_input {
@@ -106,7 +116,7 @@ header {
       &:focus {
         outline: none;
       }
-      &::placeholder{
+      &::placeholder {
         color: #000;
         font-size: 1rem;
       }
@@ -125,10 +135,13 @@ header {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   h1 {
-    border: 1px solid greenyellow;
+    // border: 1px solid greenyellow;
     text-align: center;
     padding: 30px 0;
     box-sizing: border-box;
+    font-family: syne;
+    font-weight: 700;
+    font-size: 45px;
   }
   @include pad {
     grid-template-rows: unset;
@@ -136,10 +149,12 @@ header {
 }
 
 .menu {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: normal;
   text-align: center;
   display: flex;
   // padding: 20px 0;
-  border: 5px solid gray;
+  // border: 5px solid gray;
   gap: 20px;
   padding-left: 20px;
   box-sizing: border-box;
@@ -169,61 +184,76 @@ header {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  .menu-button {
+  }
   @include pad {
     // border: none;
-    .menu-button {
-      width: 30px;
-      height: 22px;
-      transform: rotate(0deg);
-      transition: 0.5s ease-in-out;
-      cursor: pointer;
-      z-index: 105;
+    .menu-btn-bg {
+      background-color: #e5c22e;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      // position: relative;
 
-      span {
-        display: block;
-        position: absolute;
-        height: 4px;
-        width: 200px;
-        background: #333;
-        border-radius: 4px;
-        opacity: 1;
-        left: 0;
+      .menu-button {
+        width: 18px;
+        height: 10px;
         transform: rotate(0deg);
-        transition: 0.25s ease-in-out;
-        &:active {
-          display: none;
-        }
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        z-index: 105;
+        border-radius: 50%;
+        position: absolute;
+        top: 28px;
+        right: 32px;
+        gap: 5px;
 
-        &:nth-child(1) {
-          top: 10px;
-          left: 0;
-        }
-
-        &:nth-child(2) {
-          top: 0px;
-        }
-
-        &:nth-child(3) {
-          top: 20px;
-        }
-      }
-
-      &.open {
         span {
-          top: 10px;
-          transform-origin: center;
-          &:nth-child(1),
-          &:nth-child(4) {
-            width: 0%;
-            left: 50%;
+          display: block;
+          position: absolute;
+          height: 4px;
+          width: 100%;
+          background: #333;
+          border-radius: 4px;
+          opacity: 1;
+          left: 0;
+          transform: rotate(0deg);
+          transition: 0.25s ease-in-out;
+          &:active {
+            display: none;
+          }
+
+          &:nth-child(1) {
+            top: 10px;
+            left: 0;
           }
 
           &:nth-child(2) {
-            transform: rotate(45deg);
+            top: 0px;
           }
 
           &:nth-child(3) {
-            transform: rotate(-45deg);
+            top: 20px;
+          }
+        }
+
+        &.open {
+          span {
+            top: 10px;
+            transform-origin: center;
+            &:nth-child(1),
+            &:nth-child(4) {
+              width: 0%;
+              left: 50%;
+            }
+
+            &:nth-child(2) {
+              transform: rotate(45deg);
+            }
+
+            &:nth-child(3) {
+              transform: rotate(-45deg);
+            }
           }
         }
       }
