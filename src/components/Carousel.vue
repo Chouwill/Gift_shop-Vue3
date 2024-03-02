@@ -18,19 +18,15 @@ import { Carousel, Slide, Navigation } from "vue3-carousel";
 
 defineProps({
   imgs: {
-    type: {
-      type: Array,
-      required: true,
-    },
+    type: Array,
+    required: true,
   },
   settings: {
-    type: {
-      type: Object,
+    type: Object,
       default: () => ({
         itemsToShow: 1,
         snapAlign: "start",
-      }),
-    },
+    }),
   },
   breakpoints: {
     type: Object,
@@ -48,3 +44,12 @@ defineProps({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+img{
+    max-width: 100%;
+}
+:deep(.carousel__next){
+    border: 1px solid red;
+}
+</style>
