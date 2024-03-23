@@ -89,7 +89,8 @@
 
     <div class="looks">
       <h3>Look Us Up @JSY</h3>
-      <ul class="picture_router">
+      <Carousl :imgs="looksImages" />
+      <!-- <ul class="picture_router">
         <li>
           <img src="https://picsum.photos/171/171/?random=11" />
         </li>
@@ -111,12 +112,25 @@
         <li>
           <img src="https://picsum.photos/210/210/?random=17" />
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import Carousl from "../components/Carousel.vue";
+const looksImages = [
+  "https://picsum.photos/210/210/?random=11",
+  "https://picsum.photos/210/210/?random=12",
+  "https://picsum.photos/210/210/?random=13",
+  "https://picsum.photos/210/210/?random=14",
+  "https://picsum.photos/210/210/?random=15",
+  "https://picsum.photos/210/210/?random=16",
+  "https://picsum.photos/210/210/?random=17",
+  "https://picsum.photos/210/210/?random=18",
+  "https://picsum.photos/210/210/?random=19",
+];
+</script>
 
 <style lang="scss" scoped>
 /* 首頁 */
@@ -125,7 +139,7 @@
   list-style: none;
   text-decoration: none;
 }
-.wrapper{
+.wrapper {
   max-width: 100%;
 }
 .introduction {
