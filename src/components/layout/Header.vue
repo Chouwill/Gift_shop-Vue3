@@ -167,7 +167,7 @@ header {
     position: fixed;
     font-size: 2rem;
     gap: 5vh;
-    width: 70vw;
+    width: 100vw;
     height: 100vh;
     z-index: 100;
     top: 0;
@@ -193,20 +193,23 @@ header {
       width: 45px;
       height: 45px;
       border-radius: 50%;
-      // position: relative;
+      position: relative;
 
       .menu-button {
-        width: 18px;
-        height: 10px;
+        width: 50%;
+        height: 50%;
         transform: rotate(0deg);
         transition: 0.5s ease-in-out;
         cursor: pointer;
         z-index: 105;
         border-radius: 50%;
         position: absolute;
-        top: 28px;
-        right: 32px;
+        top: 0px;
+        right: 0;
+        left: 0;
+        bottom: 0;
         gap: 5px;
+        margin: auto;
 
         span {
           display: block;
