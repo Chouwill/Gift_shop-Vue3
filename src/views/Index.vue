@@ -241,7 +241,7 @@ const looksImages = [
 @media (max-width: 768px) {
   .shop_builder {
     width: 100%;
-    margin-top: 100px;
+    padding: 24px 0;
     .shop_main_builder {
       .picture_builder {
         li {
@@ -265,7 +265,7 @@ const looksImages = [
   .advertisemen {
     width: 100%;
     display: block;
-    margin-top: 500px;
+    // margin-top: 500px;
   }
 }
 .square_box {
