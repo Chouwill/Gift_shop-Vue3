@@ -1,41 +1,40 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import HomeLiving from "../views/HomeLiving.vue";
-import Index from "../views/Index.vue";
-import Sale from "../views/Sale.vue";
-import GiftCard from "../views/GiftCard.vue";
-import Accessories from "../views/Accessories.vue";
-import Stationery from "../views/Stationery.vue";
-import Shoppingcart from "../views/Shoppingcart.vue";
-
 const routes = [
   {
     path: "/",
-    component: () => Index,
+    name: "Index",
+    component: () => import("../views/Index.vue"),
   },
   {
     path: "/home",
-    component: () => HomeLiving,
+    name: "HomeLiving",
+    component: () => import("../views/HomeLiving.vue"),
   },
   {
     path: "/accessories",
-    component: () => Accessories,
+    name: "Accessories",
+    component: () => import("../views/Accessories.vue"),
   },
   {
     path: "/stationery",
-    component: () => Stationery,
+    name: "Stationery",
+    component: () => import("../views/Stationery.vue"),
   },
   {
     path: "/sale",
-    component: () => Sale,
+    name: "Sale",
+    component: () => import("../views/Sale.vue"),
   },
   {
     path: "/gift-card",
-    component: () => GiftCard,
+    name: "GiftCard",
+    component: () => import("../views/GiftCard.vue"),
   },
   {
     path: "/shoppingcart",
-    component: () => Shoppingcart,
+    name: "Shoppingcart",
+    component: () => import("../views/Shoppingcart.vue"),
   },
 ];
 
