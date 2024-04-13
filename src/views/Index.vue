@@ -2,7 +2,8 @@
   <div class="wrapper">
     <div class="introduction">
       <div class="gift_box">
-        <h2>The Gift of<br />Good Style</h2>
+        <h2>The Gift of<br />Good Style999999999999999</h2>
+        
         <p>
           I'm a paragraph. Click here to add your own text and edit me.<br />
           It’s easy. Just click “Edit Text” or double click me to add your<br />
@@ -19,9 +20,7 @@
     </div>
     <div class="shop_builder">
       <h3>Gifts up to $50</h3>
-      <div class="shop_main_builder">
-        
-      </div>
+      <div class="shop_main_builder"></div>
     </div>
     <div class="advertisemen"></div>
 

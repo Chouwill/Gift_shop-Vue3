@@ -37,7 +37,7 @@ import instance from "../utils/request";
 import { useCartStore } from "../stores/cart";
 const cart = useCartStore();
 
-const loading = ref(true);
+const loading = ref(false);
 
 const notes = ref([]);
 
@@ -49,15 +49,22 @@ const addCart = (product) => {
   cart.add(product);
 };
 
-onMounted(async () => {   //  onMounted 畫面進來之前
-  const apiURL = `${import.meta.env.VITE_APP_API}/api/${
-    import.meta.env.VITE_APP_PATH
-  }/products`;
-  const res = await axios.get(apiURL);
-  if (res.data && Array.isArray(res.data.products)) {
-    state1.products = res.data.products;
+onMounted(async () => {
+  //  onMounted 畫面進來之前
+  try {
+    loading.value = true;
+    const apiURL = `${import.meta.env.VITE_APP_API}/api/${
+      import.meta.env.VITE_APP_PATH
+    }/products`;
+    const res = await axios.get(apiURL);
+    if (res.data && Array.isArray(res.data.products)) {
+      state1.products = res.data.products;
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    loading.value = false;
   }
-  loading.value = false;
 });
 </script>
 
