@@ -10,19 +10,21 @@
       <h1><router-link to="/">JSY</router-link></h1>
       <ul :class="['menu', { show: menuIsShow }]">
         <li>
-          <router-link to="/home">HOME & Living</router-link>
+          <router-link to="/home">HOME</router-link>
+          <!-- <Index /> -->
         </li>
         <li>
-          <router-link to="/accessories">Accessories</router-link>
+          <!-- <router-link to="/accessories">Accessories</router-link> -->
         </li>
         <li>
-          <router-link to="/stationery">Stationery</router-link>
+          <!-- <router-link to="/stationery">Stationery</router-link> -->
+
         </li>
         <li>
           <router-link to="/sale">Sale</router-link>
         </li>
         <li>
-          <router-link to="/gift-card">Gift Card</router-link>
+          <!-- <router-link to="/gift-card">Gift Card</router-link> -->
         </li>
       </ul>
     </nav>
@@ -58,6 +60,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useCartStore } from "../../stores/cart";
+// import Index from "../../views/Index.vue";
 
 const cart = useCartStore();
 
@@ -149,13 +152,15 @@ header {
 }
 
 .menu {
+  width: 30%;
+  margin: 0 auto;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: normal;
   text-align: center;
   display: flex;
   // padding: 20px 0;
   // border: 5px solid gray;
-  gap: 20px;
+  // gap: 10px;
   padding-left: 20px;
   box-sizing: border-box;
   justify-content: space-evenly;

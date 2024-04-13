@@ -9,12 +9,20 @@
       </p>
     </header>
 
-    <ul v-if="state1.products.length" class="product_list">
+    <!-- partial:index.partial.html -->
+    <!-- partial -->
+
+    <span class="loader" v-if="loading"></span>
+    <ul class="product_list" v-else>
       <li v-for="product in state1.products" :key="product.id">
         <img :src="product.imageUrl" :alt="product.title" />
-        <h4>{{ product.title }}</h4>
-        <span>$ {{ product.price }}元</span>
-        <button @click="addCart(product)">加入購物車</button>
+        <div class="product_information">
+          <div class="product_text">
+            <h4>{{ product.title }}</h4>
+            <span>$ {{ product.price }}元</span>
+          </div>
+          <button @click="addCart(product)">加入購物車</button>
+        </div>
       </li>
     </ul>
   </div>
@@ -25,9 +33,11 @@ import { reactive } from "vue";
 import { getProducts } from "../apis/product";
 import { onMounted, ref } from "vue";
 import axios from "axios";
+import instance from "../utils/request";
 import { useCartStore } from "../stores/cart";
-
 const cart = useCartStore();
+
+const loading = ref(true);
 
 const notes = ref([]);
 
@@ -39,7 +49,7 @@ const addCart = (product) => {
   cart.add(product);
 };
 
-onMounted(async () => {
+onMounted(async () => {   //  onMounted 畫面進來之前
   const apiURL = `${import.meta.env.VITE_APP_API}/api/${
     import.meta.env.VITE_APP_PATH
   }/products`;
@@ -47,7 +57,7 @@ onMounted(async () => {
   if (res.data && Array.isArray(res.data.products)) {
     state1.products = res.data.products;
   }
-  console.log(res);
+  loading.value = false;
 });
 </script>
 
@@ -68,8 +78,32 @@ onMounted(async () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 2px 5px 3px #f2f4f7;
     // border: 5px solid red;
     flex-direction: column;
+    .product_information {
+      padding: 5px 0;
+      // border: 5px solid yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      h4 {
+        font-weight: 900;
+        font-size: 16px;
+        color: #000;
+      }
+      button {
+        padding: 10px 10px;
+        border-radius: 5px;
+        border: none;
+        font-weight: 700;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #d9d9d9;
+      }
+    }
     @include pad {
       width: calc((100% - 15px) / 2); // 變2張
     }
@@ -82,10 +116,53 @@ onMounted(async () => {
       margin: 10px 0;
       object-fit: cover;
     }
-    button {
-      padding: 15px 15px;
-      border-radius: 20px;
-    }
   }
 }
+
+/* Loader style */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: #ccc;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5) translate(0, 0);
+  background-color: #ccc;
+  border-radius: 50%;
+  animation: animloader 1s infinite ease-in-out;
+}
+.loader::before {
+  background-color: #000;
+  transform: scale(0.5) translate(-48px, -48px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animloader {
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+/* END Loader style */
 </style>

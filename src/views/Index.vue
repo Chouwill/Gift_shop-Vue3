@@ -20,40 +20,7 @@
     <div class="shop_builder">
       <h3>Gifts up to $50</h3>
       <div class="shop_main_builder">
-        <a>
-          <font-awesome-icon icon="fa-solid fa-less-than" />
-        </a>
-        <ul class="picture_builder">
-          <li>
-            <img src="https://picsum.photos/170/170/?random=1" />
-            <p>Patterned Socks</p>
-            <p>$9.99</p>
-          </li>
-          <li>
-            <span class="price_tag">
-              <p>-10%</p>
-            </span>
-            <img src="https://picsum.photos/170/170/?random=2" />
-            <p>Patterned Socks</p>
-            <p>$9.99</p>
-          </li>
-          <li>
-            <img src="https://picsum.photos/170/170/?random=4" />
-            <p>Patterned Socks</p>
-            <p>$9.99</p>
-          </li>
-          <li>
-            <span class="price_tag">
-              <p>-20%</p>
-            </span>
-            <img src="https://picsum.photos/170/170/?random=3" />
-            <p>Patterned Socks</p>
-            <p>$9.99</p>
-          </li>
-        </ul>
-        <a>
-          <font-awesome-icon icon="fa-solid fa-greater-than" />
-        </a>
+        
       </div>
     </div>
     <div class="advertisemen"></div>
