@@ -12,9 +12,13 @@
     <ul v-if="state1.products.length" class="product_list">
       <li v-for="product in state1.products" :key="product.id">
         <img :src="product.imageUrl" :alt="product.title" />
-        <h4>{{ product.title }}</h4>
-        <span>$ {{ product.price }}元</span>
-        <button @click="addCart(product)">加入購物車</button>
+        <div class="product_information">
+          <div class="product_text">
+            <h4>{{ product.title }}</h4>
+            <span>$ {{ product.price }}元</span>
+          </div>
+          <button @click="addCart(product)">加入購物車</button>
+        </div>
       </li>
     </ul>
   </div>
@@ -68,8 +72,32 @@ onMounted(async () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 2px 5px 3px #f2f4f7;
     // border: 5px solid red;
     flex-direction: column;
+    .product_information {
+      padding: 5px 0;
+      // border: 5px solid yellow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      h4 {
+        font-weight: 900;
+        font-size: 16px;
+        color: #000;
+      }
+      button {
+        padding: 10px 10px;
+        border-radius: 5px;
+        border: none;
+        font-weight: 700;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #d9d9d9;
+      }
+    }
     @include pad {
       width: calc((100% - 15px) / 2); // 變2張
     }
@@ -81,10 +109,6 @@ onMounted(async () => {
       height: 300px;
       margin: 10px 0;
       object-fit: cover;
-    }
-    button {
-      padding: 15px 15px;
-      border-radius: 20px;
     }
   }
 }
