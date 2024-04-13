@@ -2,71 +2,18 @@
   <footer class="footer">
     <div class="footer_menu">
       <div class="footer_group">
-        <h3 class="footer_title">Shop</h3>
+        <h3 class="footer_title">RoadMap</h3>
         <ul class="footer_column">
           <li>
-            <a href="#">All</a>
+            <a href="/home">Home</a>
           </li>
           <li>
-            <a href="#">Home & Living</a>
-          </li>
-          <li>
-            <a href="#">Accessories</a>
-          </li>
-          <li>
-            <a href="#">Stationery</a>
-          </li>
-          <li>
-            <a href="#">Sale</a>
-          </li>
-          <li>
-            <a href="#">Gift Card</a>
-          </li>
-        </ul>
-      </div>
-      <!-- <ul class="footer_column">
-        <h3><a href="#">Helpful Links</a></h3>
-        <li>
-          <a href="#">FAQ</a>
-        </li>
-        <li>
-          <a href="#">Terms & Conditions</a>
-        </li>
-        <li>
-          <a href="#">Privacy Policy</a>
-        </li>
-        <li>
-          <a href="#">Shipping Policy</a>
-        </li>
-        <li>
-          <a href="#">Sale</a>
-        </li>
-        <li>
-          <a href="#">Gift Card</a>
-        </li>
-      </ul> -->
-      <div class="footer_group">
-        <h3 class="footer_title">Contact</h3>
-        <ul class="footer_column">
-          <li>
-            <a href="#">All</a>
-          </li>
-          <li>
-            <a href="#">Home & Living</a>
-          </li>
-          <li>
-            <a href="#">Accessories</a>
-          </li>
-          <li>
-            <a href="#">Stationery</a>
-          </li>
-          <li>
-            <a href="#">Refund Policy</a>
+            <a href="/sale">Sale</a>
           </li>
           <li class="footer_icon">
-            <a href="#"><font-awesome-icon icon="fa-brands fa-instagram" /></a>
-            <a href="#"><font-awesome-icon icon="fa-brands fa-facebook" /></a>
-            <a href="#"><font-awesome-icon icon="fa-brands fa-tiktok" /></a>
+            <a href="#" target="_blank" title="instagram"><font-awesome-icon icon="fa-brands fa-instagram" /></a>
+            <a href="#" target="_blank" title="facebook"><font-awesome-icon icon="fa-brands fa-facebook" /></a>
+            <a href="#" target="_blank" title="tiktok"><font-awesome-icon icon="fa-brands fa-tiktok" /></a>
           </li>
         </ul>
       </div>
@@ -85,9 +32,9 @@
             <button class="form-button" type="submit">Subscribe</button>
           </div>
         </form>
-        <p>© 2035 by JSY. Powered and secured by Wix</p>
       </div>
     </div>
+    <p class="footer_copyright">© 2035 by JSY. Powered and secured by Wix</p>
     <div class="footer_logo">
       <span>JSY</span>
     </div>
@@ -108,9 +55,8 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 50px 24px;
+    padding: 50px 24px 24px;
     gap: 20px;
-    flex-wrap: wrap;
   }
   &_title {
     font-weight: bold;
@@ -125,7 +71,7 @@
   }
   &_icon {
     display: flex;
-    gap: 0.8rem;
+    gap: 1rem;
     font-size: 1rem;
   }
   &_description {
@@ -136,10 +82,14 @@
     display: flex;
     align-items: end;
     gap: 8px;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     .form-item:first-of-type {
       flex: 1;
     }
+  }
+  &_copyright {
+    text-align: center;
+    margin-bottom: 24px;
   }
   &_logo {
     text-align: center;

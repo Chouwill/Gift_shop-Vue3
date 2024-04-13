@@ -9,15 +9,22 @@
     <nav class="logo_menu">
       <h1><router-link to="/">JSY</router-link></h1>
       <ul :class="['menu', { show: menuIsShow }]" @click="clickItem">
+        <li class="menu_search">
+          <div class="search_box">
+            <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+            <input type="search" class="search_input" placeholder="Search" />
+          </div>
+        </li>
         <li>
-          <router-link to="/home">HOME</router-link>
+          <router-link to="/home">Home</router-link>
           <!-- <Index /> -->
         </li>
         <!-- <li>
           <router-link to="/accessories">Accessories</router-link>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <router-link to="/stationery">Stationery</router-link>
+
         </li> -->
         <li>
           <router-link to="/sale">Sale</router-link>
@@ -66,14 +73,24 @@ const cart = useCartStore();
 const cartNum = computed(() => cart.cartNum);
 
 const menuIsShow = ref(false);
+// const iconName = computed(() =>
+//   menuIsShow.value ? "fa-solid fa-xmark" : "fa-solid fa-bar"
+// );
+
+const clickItem = (e) => {
+  console.log(e.target.nodeName)
+  if (e.target.nodeName === 'A') {
+    menuIsShow.value = false
+  }
+}
 
 const toggleMenu = () => {
   menuIsShow.value = !menuIsShow.value;
 };
-
-const clickItem = () => {
-  menuIsShow.value = !menuIsShow.value;
-};
+// const toggleMenu = () => {
+//   menuIsShow.value = !menuIsShow.value;
+//   console.log("menuIsShow:", menuIsShow.value);
+// };
 </script>
 
 <style lang="scss" scoped>
@@ -97,35 +114,51 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  @include pad {
+    display: none;
+  }
+}
+
+.menu_search {
+  display: none;
   .search_box {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-bottom: 2px solid transparent;
-    &:focus,
-    &:hover {
-      border-bottom-color: #000;
-    }
-    .search_icon {
-      font-size: 1.2rem;
-    }
+    border-bottom-color: #000;
     .search_input {
-      border: none;
-      padding: 8px 4px;
-      &:focus {
-        outline: none;
-      }
-      &::placeholder {
-        color: #000;
-        font-size: 1rem;
-      }
-    }
-    &:focus-within {
-      border-bottom: 2px solid #000;
+      background-color: transparent;
+      flex: 1;
     }
   }
   @include pad {
-    display: none;
+    display: block;
+  }
+}
+
+
+.search_box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid transparent;
+  &:focus,
+  &:hover {
+    border-bottom-color: #000;
+  }
+  .search_icon {
+    font-size: 1.2rem;
+  }
+  .search_input {
+    border: none;
+    padding: 8px 4px;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: #000;
+      font-size: 1rem;
+    }
+  }
+  &:focus-within {
+    border-bottom: 2px solid #000;
   }
 }
 
@@ -157,7 +190,7 @@ header {
   // padding: 20px 0;
   // border: 5px solid gray;
   // gap: 10px;
-  padding-left: 20px;
+  padding-left: 0;
   box-sizing: border-box;
   justify-content: space-evenly;
   align-items: center;
@@ -166,7 +199,6 @@ header {
     justify-content: center;
     flex-direction: column;
     position: fixed;
-    font-size: 2rem;
     gap: 5vh;
     width: 100vw;
     height: 100vh;
@@ -174,8 +206,13 @@ header {
     top: 0;
     right: 0px;
     background-color: orange;
+    padding: 0 2rem;
     &:not(.show) {
       display: none;
+    }
+    li {
+      width: 100%;
+      text-align: left;
     }
   }
 }
