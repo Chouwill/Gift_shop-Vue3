@@ -8,24 +8,23 @@
     </div>
     <nav class="logo_menu">
       <h1><router-link to="/">JSY</router-link></h1>
-      <ul :class="['menu', { show: menuIsShow }]">
+      <ul :class="['menu', { show: menuIsShow }]" @click="clickItem">
         <li>
           <router-link to="/home">HOME</router-link>
           <!-- <Index /> -->
         </li>
-        <li>
-          <!-- <router-link to="/accessories">Accessories</router-link> -->
+        <!-- <li>
+          <router-link to="/accessories">Accessories</router-link>
         </li>
         <li>
-          <!-- <router-link to="/stationery">Stationery</router-link> -->
-
-        </li>
+          <router-link to="/stationery">Stationery</router-link>
+        </li> -->
         <li>
           <router-link to="/sale">Sale</router-link>
         </li>
-        <li>
-          <!-- <router-link to="/gift-card">Gift Card</router-link> -->
-        </li>
+        <!-- <li>
+          <router-link to="/gift-card">Gift Card</router-link>
+        </li> -->
       </ul>
     </nav>
     <div class="member">
@@ -67,17 +66,14 @@ const cart = useCartStore();
 const cartNum = computed(() => cart.cartNum);
 
 const menuIsShow = ref(false);
-// const iconName = computed(() =>
-//   menuIsShow.value ? "fa-solid fa-xmark" : "fa-solid fa-bar"
-// );
 
 const toggleMenu = () => {
   menuIsShow.value = !menuIsShow.value;
 };
-// const toggleMenu = () => {
-//   menuIsShow.value = !menuIsShow.value;
-//   console.log("menuIsShow:", menuIsShow.value);
-// };
+
+const clickItem = () => {
+  menuIsShow.value = !menuIsShow.value;
+};
 </script>
 
 <style lang="scss" scoped>

@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="introduction">
       <div class="gift_box">
-        <h2>The Gift of<br />Good Style999999999999999</h2>
+        <h2>The Gift of<br />Good Style</h2>
         
         <p>
           I'm a paragraph. Click here to add your own text and edit me.<br />
