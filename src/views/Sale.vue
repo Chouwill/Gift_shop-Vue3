@@ -21,7 +21,7 @@
             <h4>{{ product.title }}</h4>
             <span>$ {{ product.price }}元</span>
           </div>
-          <button @click="addCart(product)">加入購物車</button>
+          <button class="cartBtn" @click="addCart(product)">加入購物車</button>
         </div>
       </li>
     </ul>
@@ -109,6 +109,13 @@ onMounted(async () => {
         font-size: 16px;
         color: #ffffff;
         background-color: #d9d9d9;
+        &:hover {
+          background-color: #9c9a9a;
+        }
+        &:active {
+          background-color: #9c9a9a;
+          box-shadow: inset 4px 10px 8px rgba(0, 0, 0, 0.2);
+        }
       }
     }
     @include pad {

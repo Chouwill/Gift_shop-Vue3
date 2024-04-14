@@ -50,6 +50,6 @@ img{
     max-width: 100%;
 }
 :deep(.carousel__next){
-    border: 1px solid red;
+    border: none;
 }
 </style>

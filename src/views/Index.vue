@@ -3,7 +3,7 @@
     <div class="introduction">
       <div class="gift_box">
         <h2>The Gift of<br />Good Style</h2>
-        
+
         <p>
           I'm a paragraph. Click here to add your own text and edit me.<br />
           It’s easy. Just click “Edit Text” or double click me to add your<br />
@@ -303,7 +303,6 @@ const looksImages = [
   }
   .picture_router {
     width: 100%;
-    border: 5px solid firebrick;
     display: flex;
     justify-content: center;
 
