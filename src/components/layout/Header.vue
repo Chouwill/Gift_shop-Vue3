@@ -7,7 +7,7 @@
       </div>
     </div>
     <nav class="logo_menu">
-      <h1><router-link to="/">JSY</router-link></h1>
+      <h1><router-link to="/">PPC</router-link></h1>
       <ul :class="['menu', { show: menuIsShow }]" @click="clickItem">
         <li class="menu_search">
           <div class="search_box">
@@ -205,7 +205,7 @@ header {
     z-index: 100;
     top: 0;
     right: 0px;
-    background-color: orange;
+    background-color: #D3BBDD;
     padding: 0 2rem;
     &:not(.show) {
       display: none;
@@ -227,7 +227,7 @@ header {
   @include pad {
     // border: none;
     .menu-btn-bg {
-      background-color: #e5c22e;
+      background-color: #D3BBDD;
       width: 45px;
       height: 45px;
       border-radius: 50%;

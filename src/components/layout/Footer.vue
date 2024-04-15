@@ -11,17 +11,24 @@
             <a href="/sale">Sale</a>
           </li>
           <li class="footer_icon">
-            <a href="#" target="_blank" title="instagram"><font-awesome-icon icon="fa-brands fa-instagram" /></a>
-            <a href="#" target="_blank" title="facebook"><font-awesome-icon icon="fa-brands fa-facebook" /></a>
-            <a href="#" target="_blank" title="tiktok"><font-awesome-icon icon="fa-brands fa-tiktok" /></a>
+            <a href="#" target="_blank" title="instagram"
+              ><font-awesome-icon icon="fa-brands fa-instagram"
+            /></a>
+            <a href="#" target="_blank" title="facebook"
+              ><font-awesome-icon icon="fa-brands fa-facebook"
+            /></a>
+            <a href="#" target="_blank" title="tiktok"
+              ><font-awesome-icon icon="fa-brands fa-tiktok"
+            /></a>
           </li>
         </ul>
       </div>
       <div class="footer_group">
         <h3 class="footer_title">Subscribe</h3>
         <p class="footer_description">
-          Subscribe to our newsletter and be among the first to<br />
-          hear about new arrivals, events and special offers.
+          for our newsletter to stay updated with the latest promotions and
+          special offers.<br />
+          Don't miss out on the best deals—get notified right away!
         </p>
         <form class="footer_subscribe form">
           <div class="form-item">
@@ -34,21 +41,19 @@
         </form>
       </div>
     </div>
-    <p class="footer_copyright">© 2035 by JSY. Powered and secured by Wix</p>
+
     <div class="footer_logo">
-      <span>JSY</span>
+      <span>PPC</span>
     </div>
   </footer>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 @import "../../assets/scss/media";
 .footer {
-  background-color: #f1e4b8;
+  background-color: #d3bbdd;
   &_menu {
     display: flex;
     justify-content: space-evenly;
@@ -62,7 +67,8 @@
     font-weight: bold;
     margin-bottom: 1rem;
   }
-  &_group {}
+  &_group {
+  }
   &_column {
     font-weight: normal;
     li {
@@ -136,5 +142,4 @@
     }
   }
 }
-
 </style>

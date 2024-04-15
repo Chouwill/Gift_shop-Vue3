@@ -3,9 +3,10 @@
     <header class="page-header">
       <h2 class="page-header__title">Sale</h2>
       <p class="page-header__describe">
-        This is your category description. It’s a great place to tell customers
-        what this category is about, connect with your audience and draw
-        attention to your products.
+        Explore our curated selection of notebook sets, ideal for writers,
+        artists, and planners alike. Perfect for capturing your thoughts and
+        creative bursts, each set is designed to enhance your productivity and
+        keep your ideas organized.
       </p>
     </header>
 
