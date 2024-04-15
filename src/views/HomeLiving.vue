@@ -2,26 +2,24 @@
   <div class="wrapper">
     <div class="introduction">
       <div class="gift_box">
-        <h2>The Gift of<br />Good Style</h2>
+        <h2>Stylish Gifts<br />Timeless Charm</h2>
+
         <p>
-          I'm a paragraph. Click here to add your own text and edit me.<br />
-          It’s easy. Just click “Edit Text” or double click me to add your<br />
-          own content and make changes to the font.
+          Explore our collection. <br />Click to personalize and add your own
+          style. <br />Just click "Edit Text" or double click to begin.
         </p>
         <button>Shop Now</button>
       </div>
       <div class="candle_bg">
         <img
-          src="https://static.wixstatic.com/media/84770f_acfc43cf570e4f6aa092ca77cb3a96c5~mv2.jpg/v1/fill/w_633,h_590,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84770f_acfc43cf570e4f6aa092ca77cb3a96c5~mv2.jpg"
+          src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
         />
       </div>
     </div>
     <div class="shop_builder">
-      <h3>Gifts up to $50</h3>
-      <div class="shop_main_builder">
-        
-      </div>
+      <h3>Gifts up to $100</h3>
+      <div class="shop_main_builder"></div>
     </div>
     <div class="advertisemen"></div>
 
@@ -29,10 +27,12 @@
       <h2>Home & Living Essentials</h2>
       <div class="box_column">
         <div class="commodity_img">
-          <img src="https://picsum.photos/478/478/?random=10" />
+          <img
+            src="https://images.unsplash.com/photo-1528938102132-4a9276b8e320?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
         </div>
         <div class="commodity">
-          <h1>Geometric Bedding</h1>
+          <h1>NoteBooks</h1>
           <div class="price_text">
             <p class="price_delete">$99.99</p>
             <p>$79.99</p>
@@ -42,20 +42,22 @@
       </div>
       <div class="box_column">
         <div class="commodity">
-          <h1>Coastal Plates - Set of 4</h1>
+          <h1>Pen</h1>
           <div class="price_text">
             <p class="price_delete">$25.00</p>
           </div>
           <button>Add to Cart</button>
         </div>
         <div class="commodity_img">
-          <img src="https://picsum.photos/478/478/?random=1" />
+          <img
+            src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?q=80&w=1950&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
         </div>
       </div>
     </div>
 
     <div class="looks">
-      <h3>Look Us Up @JSY</h3>
+      <h3>Look PPC</h3>
       <Carousl :imgs="looksImages" />
       <!-- <ul class="picture_router">
         <li>
@@ -123,7 +125,7 @@ const looksImages = [
 
 .gift_box {
   flex: 1;
-  background-color: #f1e4b8;
+  background-color: #d3bbdd;
   text-align: center;
   padding: 150px 0;
 
@@ -141,9 +143,17 @@ const looksImages = [
   button {
     padding: 8px 30px;
     border-radius: 20px;
-    background-color: #f1e4b8;
+    background-color: #d3bbdd;
     border: 2px solid #000;
     margin: 50px 0;
+    &:hover {
+      background-color: #000;
+      color: white;
+    }
+    &:active {
+      background-color: #000;
+      color: white;
+    }
   }
 }
 
@@ -224,7 +234,7 @@ const looksImages = [
 .advertisemen {
   background-size: cover;
   background-position: center;
-  background-image: url("https://static.wixstatic.com/media/c837a6_327e6bf04c1c4443ad6c4f13728c41fb~mv2.jpg/v1/fill/w_1179,h_639,al_r,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_327e6bf04c1c4443ad6c4f13728c41fb~mv2.jpg");
+  background-image: url("https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   height: 600px;
   background-repeat: no-repeat;
 }
@@ -253,6 +263,10 @@ const looksImages = [
     height: 50%;
     .commodity_img {
       flex: 1;
+      img {
+        width: 478px;
+        height: 478px;
+      }
     }
     .commodity {
       display: flex;
@@ -301,10 +315,11 @@ const looksImages = [
   h3 {
     text-align: center;
     padding: 40px 0;
+    font-weight: bolder;
+    font-size: 35px;
   }
   .picture_router {
     width: 100%;
-    border: 5px solid firebrick;
     display: flex;
     justify-content: center;
 
