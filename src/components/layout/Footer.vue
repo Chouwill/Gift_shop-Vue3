@@ -24,13 +24,13 @@
         </ul>
       </div>
       <div class="footer_group">
-        <h3 class="footer_title">Subscribe</h3>
+        <h3 class="footer_title">Terms of Use</h3>
         <p class="footer_description">
-          for our newsletter to stay updated with the latest promotions and
-          special offers.<br />
-          Don't miss out on the best deals—get notified right away!
+          This website provides general information; we do not guarantee its
+          accuracy or completeness.<br> Users are responsible for any risks
+          associated with its use.
         </p>
-        <form class="footer_subscribe form">
+        <!-- <form class="footer_subscribe form">
           <div class="form-item">
             <label class="form-label">Email*</label>
             <input class="form-control" type="email" aria-label="Email" />
@@ -38,7 +38,7 @@
           <div class="form-item">
             <button class="form-button" type="submit">Subscribe</button>
           </div>
-        </form>
+        </form> -->
       </div>
     </div>
 

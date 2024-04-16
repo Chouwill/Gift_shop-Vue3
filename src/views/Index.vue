@@ -8,7 +8,7 @@
           Explore our collection. <br />Click to personalize and add your own
           style. <br />Just click "Edit Text" or double click to begin.
         </p>
-        <button>Shop Now</button>
+        <!-- <button>Shop Now</button> -->
       </div>
       <div class="candle_bg">
         <img
@@ -37,7 +37,7 @@
             <p class="price_delete">$99.99</p>
             <p>$79.99</p>
           </div>
-          <button>Add to Cart</button>
+          <!-- <button>Add to Cart</button> -->
         </div>
       </div>
       <div class="box_column">
@@ -46,7 +46,7 @@
           <div class="price_text">
             <p class="price_delete">$25.00</p>
           </div>
-          <button>Add to Cart</button>
+          <!-- <button>Add to Cart</button> -->
         </div>
         <div class="commodity_img">
           <img
