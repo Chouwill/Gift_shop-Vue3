@@ -24,7 +24,7 @@
     <div class="advertisemen"></div>
 
     <div class="square_box">
-      <h2>Home & Living Essentials</h2>
+      <h2>Necessities of life</h2>
       <div class="box_column">
         <div class="commodity_img">
           <img
