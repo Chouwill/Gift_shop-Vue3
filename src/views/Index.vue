@@ -279,12 +279,19 @@ const looksImages = [
       // border: 5px solid palegreen;
       background-color: #eae1f5;
       height: 100%;
+      h1{
+        font-weight: bolder;
+        font-size: 25px;
+      }
       .price_text {
         width: 30%;
         // border: 5px solid gold;
         display: flex;
         justify-content: space-around;
         padding: 25px 0;
+        p:nth-child(1){
+          text-decoration: line-through;
+        }
       }
     }
     button {
