@@ -27,9 +27,10 @@
         <h3 class="footer_title">Terms of Use</h3>
         <p class="footer_description">
           This website provides general information; we do not guarantee its
-          accuracy or completeness.<br> Users are responsible for any risks
-          associated with its use.
+          accuracy or completeness.<br />
+          Users are responsible for any risks associated with its use.
         </p>
+        <p class="footer_exhibit">本平台僅供學習、展示之用。參考資源: WIX</p>
         <!-- <form class="footer_subscribe form">
           <div class="form-item">
             <label class="form-label">Email*</label>
@@ -141,5 +142,10 @@
       color: #000;
     }
   }
+}
+
+.footer_exhibit {
+  color: #000;
+  margin: 20px 0;
 }
 </style>
