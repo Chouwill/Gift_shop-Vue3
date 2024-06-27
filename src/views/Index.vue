@@ -2,11 +2,12 @@
   <div class="wrapper">
     <div class="introduction">
       <div class="gift_box">
-        <h2>Stylish Gifts<br />Timeless Charm</h2>
+        <h2>時尚禮品 <br />永恆魅力</h2>
 
         <p>
-          Explore our collection. <br />Click to personalize and add your own
-          style. <br />Just click "Edit Text" or double click to begin.
+          探索我們的系列產品。<br />
+          點擊即可個性化設計並添加您的風格。 <br />
+          只需點擊 '編輯文字' 或雙擊即可開始。
         </p>
         <!-- <button>Shop Now</button> -->
       </div>
@@ -18,13 +19,13 @@
       </div>
     </div>
     <div class="shop_builder">
-      <h3>Gifts up to $100</h3>
+      <h3>100美元以內的禮物</h3>
       <div class="shop_main_builder"></div>
     </div>
     <div class="advertisemen"></div>
 
     <div class="square_box">
-      <h2>Necessities of life</h2>
+      <h2>家居生活必需品</h2>
       <div class="box_column">
         <div class="commodity_img">
           <img
@@ -32,7 +33,7 @@
           />
         </div>
         <div class="commodity">
-          <h1>NoteBooks</h1>
+          <h1>筆記本</h1>
           <div class="price_text">
             <p class="price_delete">$99.99</p>
             <p>$79.99</p>
@@ -42,7 +43,7 @@
       </div>
       <div class="box_column">
         <div class="commodity">
-          <h1>Pen</h1>
+          <h1>筆</h1>
           <div class="price_text">
             <p class="price_delete">$25.00</p>
           </div>
@@ -255,7 +256,7 @@ const looksImages = [
     text-align: center;
     font-size: 35px;
     font-weight: bolder;
-    // padding: 20px 0;
+    padding: 20px 0;
   }
   .box_column {
     // background: yellow;
@@ -279,7 +280,7 @@ const looksImages = [
       // border: 5px solid palegreen;
       background-color: #eae1f5;
       height: 100%;
-      h1{
+      h1 {
         font-weight: bolder;
         font-size: 25px;
       }
@@ -289,7 +290,7 @@ const looksImages = [
         display: flex;
         justify-content: space-around;
         padding: 25px 0;
-        p:nth-child(1){
+        p:nth-child(1) {
           text-decoration: line-through;
         }
       }

@@ -1,12 +1,9 @@
 <template>
   <div class="page-wrapper">
     <header class="page-header">
-      <h2 class="page-header__title">Sale</h2>
+      <h2 class="page-header__title">購物</h2>
       <p class="page-header__describe">
-        Explore our curated selection of notebook sets, ideal for writers,
-        artists, and planners alike. Perfect for capturing your thoughts and
-        creative bursts, each set is designed to enhance your productivity and
-        keep your ideas organized.
+        探索我們精選的筆記本套裝，適合作家、藝術家和計劃者。每套筆記本都完美適合記錄您的想法和創意，旨在提升您的生產力並幫助您組織思路。
       </p>
     </header>
 
@@ -87,11 +84,11 @@ onMounted(async () => {
     justify-content: center;
     align-items: center;
     box-shadow: 0px 2px 5px 3px #f2f4f7;
-    // border: 5px solid red;
+    border: 5px solid red;
     flex-direction: column;
     .product_information {
       padding: 5px 0;
-      // border: 5px solid yellow;
+      border: 5px solid yellow;
       display: flex;
       justify-content: center;
       align-items: center;

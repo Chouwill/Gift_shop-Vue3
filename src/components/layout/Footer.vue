@@ -2,13 +2,13 @@
   <footer class="footer">
     <div class="footer_menu">
       <div class="footer_group">
-        <h3 class="footer_title">RoadMap</h3>
+        <h3 class="footer_title">路線圖</h3>
         <ul class="footer_column">
           <li>
-            <a href="/home">Home</a>
+            <a href="/home">首頁</a>
           </li>
           <li>
-            <a href="/sale">Sale</a>
+            <a href="/sale">購物</a>
           </li>
           <li class="footer_icon">
             <a href="#" target="_blank" title="instagram"
@@ -24,13 +24,12 @@
         </ul>
       </div>
       <div class="footer_group">
-        <h3 class="footer_title">Terms of Use</h3>
+        <h3 class="footer_title">服務條款</h3>
         <p class="footer_description">
-          This website provides general information; we do not guarantee its
-          accuracy or completeness.<br />
-          Users are responsible for any risks associated with its use.
+          本網站提供一般資訊；我們不保證其準確性或完整性。<br>
+          使用者需自行承擔使用本網站的任何風險。
         </p>
-        <p class="footer_exhibit">本平台僅供學習、展示之用。參考資源: WIX</p>
+        
         <!-- <form class="footer_subscribe form">
           <div class="form-item">
             <label class="form-label">Email*</label>
