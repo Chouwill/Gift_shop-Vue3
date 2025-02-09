@@ -35,8 +35,8 @@
         <div class="commodity">
           <h1>筆記本</h1>
           <div class="price_text">
-            <p class="price_delete">$99.99</p>
-            <p>$79.99</p>
+            <!-- <p class="price_delete">$99.99</p> -->
+            <!-- <p>$79.99</p> -->
           </div>
           <!-- <button>Add to Cart</button> -->
         </div>

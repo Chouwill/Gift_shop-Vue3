@@ -51,9 +51,7 @@ onMounted(async () => {
   //  onMounted 畫面進來之前
   try {
     loading.value = true;
-    const apiURL = `${import.meta.env.VITE_APP_API}/api/${
-      import.meta.env.VITE_APP_PATH
-    }/products`;
+    const apiURL = `${import.meta.env.VITE_APP_API}/api/${import.meta.env.VITE_APP_PATH}/products`;
     const res = await axios.get(apiURL);
     if (res.data && Array.isArray(res.data.products)) {
       state1.products = res.data.products;
@@ -67,6 +65,9 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
+* {
+  border: none !important;
+}
 @import "../assets/scss/media";
 .product_list {
   width: 100%;
@@ -77,9 +78,7 @@ onMounted(async () => {
   padding: 0 24px; //左右留白 24
   margin-bottom: 3rem;
   li {
-    width: calc(
-      (100% - 30px) / 3
-    ); //  product_list寬度100% - gap左右各15 ，每排3個
+    width: calc((100% - 30px) / 3); //  product_list寬度100% - gap左右各15 ，每排3個
     display: flex;
     justify-content: center;
     align-items: center;

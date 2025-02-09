@@ -57,17 +57,69 @@
           <td>{{ totalPrice + 60 }}</td>
         </tr>
       </table>
-      <button class="self_checkout">確認結帳</button>
+
+      <!-- 確認結帳按鈕 -->
+      <button class="self_checkout" @click="SendOrder">下一步</button>
+    </div>
+
+    <!-- 彈窗 -->
+    <div v-if="showPopup" class="popup-overlay" @click="closePopup"></div>
+    <div v-if="showPopup" class="popup">
+      <p v-html="popupMessage"></p>
+      <button @click="closePopup" class="btn">關閉</button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, reactive } from "vue";
+import { computed, reactive, ref } from "vue";
 import { useCartStore } from "../stores/cart";
+import { useRouter } from "vue-router"; // 引入 useRouter
+// 使用 router
+const router = useRouter();
+
 const cart = useCartStore();
 const state = reactive(cart.state);
 const totalPrice = computed(() => cart.totalPrice);
+
+const showPopup = ref(false);
+const popupMessage = ref("");
+
+// 產生訂單編號
+function ShopcartNum() {
+  const DayNum = new Date();
+  const year = DayNum.getFullYear();
+  const month = String(DayNum.getMonth() + 1).padStart(2, "0"); // 確保兩位數
+  const day = String(DayNum.getDate()).padStart(2, "0");
+  const randomNum = Math.floor(1000 + Math.random() * 9000);
+  return `${year}${month}${day}O${randomNum}`; // ✅ 回傳訂單編號
+}
+
+// 關閉彈窗的函式
+const closePopup = () => {
+  showPopup.value = false;
+};
+
+// 送出訂單
+const SendOrder = () => {
+  router.push("/checkoutForm")
+  console.log(cart.state.products.length);
+  console.log("777", cart.state.products);
+
+  if (cart.state.products.length === 0) {
+    // ✅ 購物車為空時，顯示彈窗，並顯示訊息「現在購物車是空的」
+    popupMessage.value = "現在購物車是空的";
+    showPopup.value = true;
+  } else {
+    // ✅ 購物車有商品時，產生訂單編號
+    const orderNumber = ShopcartNum();
+    // console.log("✅ 訂單編號：", orderNumber);
+
+    // ✅ 顯示彈窗，並顯示訂單訊息
+    popupMessage.value = `您的訂單編號為：${orderNumber}<br>謝謝您的購買！`;
+    showPopup.value = true;
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -75,7 +127,6 @@ const totalPrice = computed(() => cart.totalPrice);
 .cart_wrapper {
   width: 750px;
   max-width: 100%;
-  // border: 5px solid red;
   margin: 0 auto;
   padding: 1rem;
   .cart_header {
@@ -140,7 +191,6 @@ const totalPrice = computed(() => cart.totalPrice);
         }
       }
       .cart_item_td {
-        // width: 10vw;
         h5 {
           font-size: 25px;
           font-weight: bolder;
@@ -187,7 +237,6 @@ const totalPrice = computed(() => cart.totalPrice);
       tr {
         border-bottom: 2px solid #000;
         width: 100%;
-        // height: 10px;
       }
       th,
       td {
@@ -211,5 +260,49 @@ const totalPrice = computed(() => cart.totalPrice);
     border-radius: 4px;
     color: #fff;
   }
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  z-index: 1000;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.popup p {
+  margin-bottom: 20px;
 }
 </style>

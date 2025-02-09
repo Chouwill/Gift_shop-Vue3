@@ -78,7 +78,7 @@ const menuIsShow = ref(false);
 // );
 
 const clickItem = (e) => {
-  console.log(e.target.nodeName)
+  // console.log(e.target.nodeName)
   if (e.target.nodeName === 'A') {
     menuIsShow.value = false
   }
