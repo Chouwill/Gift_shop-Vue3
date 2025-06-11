@@ -75,4 +75,4 @@ npm run build
 ## 開發者資訊
 
 由 [Chouwill](https://github.com/Chouwill) 製作  
- Email：will92068@gmail.comgit
+ Email：will92068@gmail.com
