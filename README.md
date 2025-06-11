@@ -65,6 +65,8 @@ npm run dev
 npm run build
 
 
+```
+
 ## Demo
 
 [線上預覽](https://chouwill.github.io/Gift_shop-Vue3/#/)
