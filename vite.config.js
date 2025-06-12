@@ -1,12 +1,8 @@
-import { defineConfig, loadEnv } from "vite";
+// vite.config.ts
+import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  // test
-  const env = loadEnv(mode, process.cwd());
-  return {
-    base: env.VITE_BASE || "/",
-    plugins: [vue()],
-  };
+export default defineConfig({
+  base: '/Gift_shop-Vue3/',
+  plugins: [vue()],
 });
